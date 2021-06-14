@@ -1,7 +1,6 @@
 - 👋 Hi, I’m @subhashini2000-s
 - 👀 I’m interested to take up challenges.
 - 🌱 I’m currently learning french
-- 💞️ I’m looking to collaborate with paypal
 - 📫 How to reach me linkedin.com/in/subhashini-sankaran-1b56231b4
 
 <!---
