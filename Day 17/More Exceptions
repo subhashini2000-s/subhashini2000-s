@@ -1,0 +1,29 @@
+n this HackerRank Day 17 More Exceptions 30 days of code problem set, we need to develop a program that can take two input integers and then we need to print the power of that inputs on the output screen and if the numbers are negative integers then we need to print the message that inputs are needed to positive numbers.
+
+SOLUTION(PYTHON)
+
+class e(Exception):
+    "n and p should be non-negative"
+
+
+class Calculator():
+    def power(self, n, p):
+        try:
+            if n | p < 0:
+                raise e
+
+            else:
+                return (n ** p)
+        except e:
+            return ("n and p should be non-negative")
+#Write your code here
+
+myCalculator=Calculator()
+T=int(input())
+for i in range(T):
+    n,p = map(int, input().split())
+    try:
+        ans=myCalculator.power(n,p)
+        print(ans)
+    except Exception as e:
+        print(e)   
