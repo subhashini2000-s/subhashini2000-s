@@ -1,0 +1,30 @@
+Task: Using the AdvancedArithmetic interface provided by Hacker Rank, take an integer n and return the sum of its divisors.
+
+
+Unfortunately, this day offered no JavaScript practice so I went back to C# for it.
+
+Process: Take n as a parameter of divisorSum method and first determine its divisors. This is accomplished by using a For loop from i=1 to n. In this loop it checks If n is divisible by i (when this is true the resulting integer is 0). If so, then i’s value is added onto sum. When For statement has incremented all the way from 1 to n, it ends and returns sum.
+
+SOLUTION(PYHTON)
+
+class AdvancedArithmetic(object):
+    def divisorSum(n):
+        raise NotImplementedError
+
+class Calculator(AdvancedArithmetic):
+    def divisorSum(self, n):
+        pass
+        x = []
+        for i in range(1, n+1):
+            if n % i == 0:
+                x.append(i)
+            else:
+                pass
+        return sum(x)
+
+
+n = int(input())
+my_calculator = Calculator()
+s = my_calculator.divisorSum(n)
+print("I implemented: " + type(my_calculator).__bases__[0].__name__)
+print(s)
