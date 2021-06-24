@@ -1,0 +1,83 @@
+roblem:- Day 23 BST Level-Order Traversal hackerRank or Hackerrank: Day 23: BST Level-Order Traversal or binary search tree insertion hackerrank solution or Day 23 BST(binary search tree) Level order traversal hackerrank solution or hackerrank Day 23 BST(binary search tree) Level order traversal solution or hackerrank solution Day 23 BST(binary search tree) Level order traversal solution or hackerrank Day 23 BST Level order traversal solution or hackerrank solution BST Level order traversal solution or hackerrank solution binary search tree Level order traversal solution or (bst) binary search tree Level order traversal solution or hackerrank binary search tree Level order traversal solution.
+
+Sample Input
+6
+3
+5
+4
+7
+2
+1
+
+Sample Output
+3 2 5 1 4 7
+
+SOLUTION(PYTHON)
+
+#include <iostream>
+#include <cstddef>
+#include <queue>
+#include <string>
+#include <cstdlib>
+using namespace std; 
+class Node{
+    public:
+        int data;
+        Node *left,*right;
+        Node(int d){
+            data=d;
+            left=right=NULL;
+        }
+};
+class Solution{
+    public:
+    Node* insert(Node* root, int data){
+            if(root==NULL){
+                return new Node(data);
+            }
+            else{
+                Node* cur;
+                if(data<=root->data){
+                    cur=insert(root->left,data);
+                    root->left=cur;
+                }
+                else{
+                   cur=insert(root->right,data);
+                   root->right=cur;
+                 }           
+           return root;
+           }
+        }
+       
+     
+  void levelOrder(Node * root){
+    queue<Node *> q;
+    Node* n = root;
+   
+    while(n != NULL){
+        cout << n->data << ' ';
+        
+        if( n->left  != NULL ) q.push(n->left);
+        if( n->right != NULL ) q.push(n->right);
+        if( !q.empty() ) {
+         n = q.front();
+         q.pop();
+        } else {
+         n = NULL;
+        }
+    }
+}
+
+};//End of Solution
+int main(){
+    Solution myTree;
+    Node* root=NULL;
+    int T,data;
+    cin>>T;
+    while(T-->0){
+        cin>>data;
+        root= myTree.insert(root,data);
+    }
+    myTree.levelOrder(root);
+    return 0;
+}
