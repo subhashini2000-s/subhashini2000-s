@@ -1,0 +1,38 @@
+A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself. Given a number, n, determine and print whether it's Prime or Not prime.
+
+Sample Input
+3
+12
+5
+7
+
+Sample Output
+Not prime
+Prime
+Prime
+
+SOLUTION (PYTHON)
+
+import math
+
+N = int(raw_input().strip())
+
+def isPrime(n):
+    if n < 2:
+        return False
+    elif n < 4:
+        return True
+    else:
+        prime = True
+        for i in xrange(2, int(math.sqrt(n))):
+            if (n % i == 0):
+                prime = False
+                break
+        return prime
+
+for i in xrange(N):
+    num = int(raw_input().strip())
+    if isPrime(num):
+        print "Prime"
+    else:
+        print "Not prime"
